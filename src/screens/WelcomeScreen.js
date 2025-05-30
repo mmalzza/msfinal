@@ -7,7 +7,15 @@ export default function WelcomeScreen({ navigation }) {
   const [language, setLanguage] = useState('Vietnamese');
 
   const handleContinue = () => {
-    navigation.navigate('Chat', { country, language });
+    navigation.reset({
+      index: 0,
+      routes: [
+        {
+          name: 'MainTabs',
+          params: { screen: 'MyPage', params: { country, language } },
+        },
+      ],
+    });
   };
 
   return (
