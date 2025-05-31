@@ -11,8 +11,8 @@ def get_user_info():
         'nationality': '필리핀',
         'passport': 'AB1234567',
         'visaType': 'E-9 (비전문취업)',
-        'entryDate': '2024-06-02',
-        'visaExpiry': '2025-06-01'
+        'entryDate': '2024-07-31',
+        'visaExpiry': '2025-07-30'
     })
 
 @app.route('/update', methods=['POST'])
