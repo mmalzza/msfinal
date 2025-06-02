@@ -24,14 +24,16 @@ const ChatScreen = () => {
 
     setInput('');
 
-    try {
+     try {
       const response = await axios.post('http://192.168.45.205:5000/chat', {
-        message: text,
+        query: text,
+        //message: text,
       });
+
 
       const botResponse = {
         type: 'bot',
-        text: response.data.reply,
+        text: response.data.response,
       };
       setMessages((prev) => [...prev, botResponse]);
     } catch (err) {
@@ -70,7 +72,10 @@ const ChatScreen = () => {
               <TouchableOpacity
                 key={i}
                 style={styles.categoryButton}
-                onPress={() => sendMessage(cat)}
+                onPress={() => {
+                  const question = `${cat} 관련 도움은 어디서 받을 수 있나요?`;
+                  sendMessage(question);
+                }}
               >
                 <Text style={styles.categoryText}>{cat}</Text>
               </TouchableOpacity>
@@ -163,4 +168,3 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
 });
-
