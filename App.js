@@ -11,6 +11,8 @@ import WelcomeScreen from './src/screens/WelcomeScreen';
 import ChatScreen from './src/screens/ChatScreen';
 import DocsScreen from './src/screens/DocsScreen';
 import MyPageScreen from './src/screens/MyPageScreen';
+import PDFDocsScreen from './pdfdocs';
+import ComplaintDocsScreen from './complaintdocs';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -48,6 +50,8 @@ export default function App() {
         <Stack.Screen name="SignUp" component={SignUpScreen} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="MainTabs" component={MainTabs} />
+        <Stack.Screen name="PDFDocs" component={PDFDocsScreen} />
+        <Stack.Screen name="ComplaintDocs" component={ComplaintDocsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
